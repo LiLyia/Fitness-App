@@ -1,7 +1,5 @@
 package com.example.fitnessapp;
 
-import com.example.fitnessapp.R;
-
 import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -115,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showChangeLanguageDialog() {
-        final String[] listItems = { "中文", "English" };
+        final String[] listItems = { "中文", "Русский", "عربي", "English" };
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
         builder.setTitle(R.string.choose_language);
         builder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
@@ -125,9 +123,16 @@ public class MainActivity extends AppCompatActivity {
                     setLocale("zh");
                     recreate();
                 } else if (which == 1) {
+                    setLocale("ru");
+                    recreate();
+                } else if (which == 2) {
+                    setLocale("ar");
+                    recreate();
+                } else if (which == 3) {
                     setLocale("en");
                     recreate();
                 }
+
                 dialog.dismiss();
             }
         });
