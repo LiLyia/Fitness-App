@@ -27,7 +27,7 @@ import com.scottyab.aescrypt.AESCrypt;
 import java.security.GeneralSecurityException;
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
 
     private SharedPreferences sharedPreferences;
     private EditText username;
@@ -39,7 +39,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         loadLocale();
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
+
+
+
+
 
         find();
     }
@@ -70,43 +74,44 @@ public class MainActivity extends AppCompatActivity {
                                 editor.putString("username", usernameText);
                                 editor.putString("type", type);
                                 editor.commit();
-//                                if (type.equals("user")) {
-//                                    Intent intent = new Intent(MainActivity.this, UserActivity.class);
-//                                    startActivity(intent);
-//                                } else if (type.equals("manager")) {
-//                                    Intent intent = new Intent(MainActivity.this, ManagerActivity.class);
+                                if (type.equals("user")) {
+                                    Intent intent = new Intent(LoginActivity.this, UserActivity.class);
+                                    startActivity(intent);
+                                }
+//                                else if (type.equals("manager")) {
+//                                    Intent intent = new Intent(LoginActivity.this, ManagerActivity.class);
 //                                    startActivity(intent);
 //                                } else {
-//                                    Intent intent = new Intent(MainActivity.this, AdminActivity.class);
+//                                    Intent intent = new Intent(LoginActivity.this, AdminActivity.class);
 //                                    startActivity(intent);
 //                                }
                             } else {
-                                Toast.makeText(MainActivity.this, R.string.wrond_password, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this, R.string.wrond_password, Toast.LENGTH_SHORT).show();
                             }
                         } else {
-                            Toast.makeText(MainActivity.this, R.string.user_does_not_exist, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, R.string.user_does_not_exist, Toast.LENGTH_SHORT).show();
                         }
 
                     } else {
-                        Toast.makeText(MainActivity.this, R.string.failed_to_read, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, R.string.failed_to_read, Toast.LENGTH_SHORT).show();
                     }
                 }
             });
 
         } else {
-            Toast.makeText(MainActivity.this, R.string.both_fields_cannot_empty, Toast.LENGTH_SHORT).show();
+            Toast.makeText(LoginActivity.this, R.string.both_fields_cannot_empty, Toast.LENGTH_SHORT).show();
         }
     }
 
-//    public void onRegisterClick(View view) {
-//        Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
-//        startActivity(intent);
-//    }
-//
-//    public void onRestoreClick(View view) {
-//        Intent intent = new Intent(MainActivity.this, RestorePasswordActivity.class);
-//        startActivity(intent);
-//    }
+    public void onRegisterClick(View view) {
+        Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+        startActivity(intent);
+    }
+
+    public void onRestoreClick(View view) {
+        Intent intent = new Intent(LoginActivity.this, RestorePasswordActivity.class);
+        startActivity(intent);
+    }
 
     public void onLanguagesClick(View view) {
         showChangeLanguageDialog();
@@ -114,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void showChangeLanguageDialog() {
         final String[] listItems = { "中文", "Русский", "عربي", "English" };
-        AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+        AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
         builder.setTitle(R.string.choose_language);
         builder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
             @Override

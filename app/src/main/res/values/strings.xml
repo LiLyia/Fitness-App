@@ -14,4 +14,26 @@
     <string name="failed_to_read">Failed to read data!</string>
     <string name="both_fields_cannot_empty">Both fields cannot be empty!</string>
     <string name="choose_language">Please Choose Language…</string>
+    <string name="invalid_username">This username is not available!</string>
+    <string name="username_taken">Username has been taken!</string>
+    <string name="unavailable">Unavailable!</string>
+    <string name="confirming">Confirming!</string>
+    <string name="success">Success!</string>
+    <string name="register_success">The registration has been successfully completed!</string>
+    <string name="continue_now">continue</string>
+    <string name="cannot_be_empty">All fields cannot be empty!</string>
+    <string name="email">   Email:    </string>
+    <string name="original">Original:       </string>
+    <string name="original_hint">Please enter your old password</string>
+    <string name="password_one">Password I: </string>
+    <string name="password_one_hint">Please enter your new password</string>
+    <string name="password_two">Password II:</string>
+    <string name="password_two_hint">Please re-enter your password</string>
+    <string name="submit">Submit</string>
+    <string name="clear_button">Clear</string>
+    <string name="email_hint">Please enter your email</string>
+    <string name="password_reset_complete">The password has been successfully reset!</string>
+    <string name="different_passwords">The provided passwords are different!</string>
+    <string name="read_data_success">Successfully read data!</string>
+    <string name="wrong_info">Wrong information provided!</string>
 </resources>
