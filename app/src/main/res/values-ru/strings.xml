@@ -9,7 +9,7 @@
     <string name="register">Регистрация</string>
     <string name="restore">Восстановить</string>
     <string name="languages">Языки</string>
-    <string name="copyright">Авторские права © Fitness 2023</string>
+    <string name="copyright">Авторские права © Fitness 2024</string>
     <string name="wrond_password">Неверный пароль!</string>
     <string name="user_does_not_exist">Пользователь с данным именем не существует!</string>
     <string name="failed_to_read">Ошибка прочтения данных!</string>

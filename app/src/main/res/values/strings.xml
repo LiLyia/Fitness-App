@@ -8,7 +8,7 @@
     <string name="register">register</string>
     <string name="restore">restore</string>
     <string name="languages">languages</string>
-    <string name="copyright">Copyright © Fitness 2023</string>
+    <string name="copyright">Copyright © Fitness 2024</string>
     <string name="wrond_password">Wrong password!</string>
     <string name="user_does_not_exist">User does not exist!</string>
     <string name="failed_to_read">Failed to read data!</string>

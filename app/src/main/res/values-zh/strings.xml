@@ -9,7 +9,7 @@
     <string name="register">注册</string>
     <string name="restore">恢复</string>
     <string name="languages">语言</string>
-    <string name="copyright">版权所有 © 健身 2023</string>
+    <string name="copyright">版权所有 © 健身 2024</string>
     <string name="wrond_password">密码错误！</string>
     <string name="user_does_not_exist">用户不存在！</string>
     <string name="failed_to_read">读取失败！</string>

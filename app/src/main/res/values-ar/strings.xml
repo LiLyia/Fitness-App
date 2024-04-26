@@ -9,7 +9,7 @@
     <string name="register">إنشاء حساب</string>
     <string name="restore">هل نسيت كلمة المرور</string>
     <string name="languages">اللغة</string>
-    <string name="copyright">الحقوق محفوظة © Fitness 2023</string>
+    <string name="copyright">الحقوق محفوظة © Fitness 2024</string>
     <string name="wrond_password">كلمة مرور خاطئة</string>
     <string name="user_does_not_exist">المستخدم غير موجود!</string>
     <string name="failed_to_read">خطأ في قراءة البيانات </string>
