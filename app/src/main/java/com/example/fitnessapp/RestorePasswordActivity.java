@@ -74,6 +74,8 @@ public class RestorePasswordActivity extends AppCompatActivity {
                 }
             });
 
+        } else {
+            Toast.makeText(RestorePasswordActivity.this, R.string.both_fields_cannot_empty, Toast.LENGTH_SHORT).show();
         }
 
     }
