@@ -1,42 +1,47 @@
 package com.example.fitnessapp;
 
-import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.os.Bundle;
+import android.view.View;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Locale;
-
 public class UserActivity extends AppCompatActivity {
 
+    private SharedPreferences sharedPreferences;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        loadLocale();
         setContentView(R.layout.activity_user);
-
-
-    }
-
-    private void setLocale(String language) {
-        Locale locale = new Locale(language);
-        Locale.setDefault(locale);
-        Configuration configuration = new Configuration();
-        configuration.locale = locale;
-        getBaseContext().getResources().updateConfiguration(configuration, getBaseContext().getResources().getDisplayMetrics());
-        SharedPreferences.Editor editor = getSharedPreferences("Settings", MODE_PRIVATE).edit();
-        editor.putString("My_Lang", language);
-        editor.apply();
-    }
-
-    private void loadLocale() {
-        SharedPreferences sharedPreferences = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
-        String language = sharedPreferences.getString("My_Lang", "");
-        setLocale(language);
         ActionBar actionBar = getSupportActionBar();
     }
 
+    public void onBrowseClick(View view) {
+        Intent intent = new Intent(UserActivity.this, EmptyActivity.class);
+        startActivity(intent);
+    }
+
+    public void onRentedBookClick(View view) {
+        Intent intent = new Intent(UserActivity.this, EmptyActivity.class);
+        startActivity(intent);
+    }
+
+    public void onChangePasswordClick(View view) {
+        Intent intent = new Intent(UserActivity.this, ChangePasswordActivity.class);
+        String usernameText = "";
+        sharedPreferences = getSharedPreferences("myprefs", Context.MODE_PRIVATE);
+        usernameText = sharedPreferences.getString("username", "defvalue");
+        startActivity(intent);
+    }
+
+    public void onLogOutClick(View view) {
+        Intent intent = new Intent(UserActivity.this, LoginActivity.class);
+        finishAffinity();
+        startActivity(intent);
+    }
 }

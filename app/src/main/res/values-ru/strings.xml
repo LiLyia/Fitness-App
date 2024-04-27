@@ -37,4 +37,8 @@
     <string name="different_passwords">Введенные пароли отличаются!</string>
     <string name="read_data_success">Успешное прочтение данных.</string>
     <string name="wrong_info">Данные не верны!</string>
+    <string name="browse">x</string>
+    <string name="change_password">x</string>
+    <string name="log_out">x</string>
+    <string name="button">x</string>
 </resources>

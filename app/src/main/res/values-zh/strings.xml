@@ -37,4 +37,8 @@
     <string name="different_passwords">提供的密码不一致！</string>
     <string name="read_data_success">成功读取数据！</string>
     <string name="wrong_info">提交信息错误！</string>
+    <string name="browse">x</string>
+    <string name="change_password">x</string>
+    <string name="log_out">x</string>
+    <string name="button">x</string>
 </resources>

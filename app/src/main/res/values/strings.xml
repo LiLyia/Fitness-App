@@ -36,4 +36,8 @@
     <string name="different_passwords">The provided passwords are different!</string>
     <string name="read_data_success">Successfully read data!</string>
     <string name="wrong_info">Wrong information provided!</string>
+    <string name="browse">Browse</string>
+    <string name="change_password">Change Password</string>
+    <string name="log_out">Log Out</string>
+    <string name="button">Button</string>
 </resources>
