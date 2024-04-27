@@ -20,6 +20,9 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.scottyab.aescrypt.AESCrypt;
+
+import java.security.GeneralSecurityException;
 
 public class ChangePasswordActivity extends AppCompatActivity {
 
@@ -44,7 +47,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
         repeatPassword = findViewById(R.id.input_repeat_password);
     }
 
-    public void onSubmitClick(View view) {
+    public void onSubmitClick(View view) throws GeneralSecurityException {
         db = FirebaseDatabase.getInstance();
         reference = FirebaseDatabase.getInstance().getReference("users");
 
@@ -52,6 +55,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
         String usernameText = sharedPreferences.getString("username", "defvalue");
 
         String originalPasswordText = originalPassword.getText().toString();
+        String encryptedOriginalPasswordText = AESCrypt.encrypt("key", originalPasswordText);
         String passwordText = password.getText().toString();
         String repeatPasswordText = repeatPassword.getText().toString();
 
@@ -67,8 +71,12 @@ public class ChangePasswordActivity extends AppCompatActivity {
 //                            Toast.makeText(LoginActivity.this, "Successfully read data!", Toast.LENGTH_SHORT).show();
                             DataSnapshot dataSnapshot = task.getResult();
                             String correctPasswordText = String.valueOf(dataSnapshot.child("password").getValue());
-                            if (correctPasswordText.equals(originalPasswordText)) {
-                                updatePasswordInDatabase(passwordText, repeatPasswordText, usernameText);
+                            if (correctPasswordText.equals(encryptedOriginalPasswordText)) {
+                                try {
+                                    updatePasswordInDatabase(passwordText, repeatPasswordText, usernameText);
+                                } catch (GeneralSecurityException e) {
+                                    throw new RuntimeException(e);
+                                }
 
                             } else {
                                 Toast.makeText(ChangePasswordActivity.this, R.string.wrond_password, Toast.LENGTH_SHORT).show();
@@ -88,11 +96,12 @@ public class ChangePasswordActivity extends AppCompatActivity {
 
     }
 
-    private void updatePasswordInDatabase(String passwordText, String repeatPasswordText, String usernameText) {
+    private void updatePasswordInDatabase(String passwordText, String repeatPasswordText, String usernameText) throws GeneralSecurityException  {
         if (!passwordText.equals(repeatPasswordText)) {
             Toast.makeText(ChangePasswordActivity.this, R.string.different_passwords, Toast.LENGTH_SHORT).show();
         } else {
-            reference.child(usernameText).child("password").setValue(passwordText);
+            String encryptedPasswordText = AESCrypt.encrypt("key", passwordText);
+            reference.child(usernameText).child("password").setValue(encryptedPasswordText);
             new AlertDialog.Builder(this)
                     .setTitle(R.string.success)
                     .setMessage(R.string.password_reset_complete)

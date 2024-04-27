@@ -40,11 +40,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         loadLocale();
         setContentView(R.layout.activity_login);
-
-
-
-
-
         find();
     }
 
