@@ -45,4 +45,7 @@
     <string name="back">x</string>
     <string name="delete">x</string>
     <string name="user_management">x</string>
+    <string name="back_calendar"><![CDATA[<-]]></string>
+    <string name="forward_calendar"><![CDATA[->]]></string>
+    <string name="calendar">x</string>
 </resources>

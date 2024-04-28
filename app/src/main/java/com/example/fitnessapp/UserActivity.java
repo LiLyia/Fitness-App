@@ -21,6 +21,11 @@ public class UserActivity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
     }
 
+    public void onCalendarClick(View view) {
+        Intent intent = new Intent(UserActivity.this, CalendarActivity.class);
+        startActivity(intent);
+    }
+
     public void onChangePasswordClick(View view) {
         Intent intent = new Intent(UserActivity.this, ChangePasswordActivity.class);
         String usernameText = "";

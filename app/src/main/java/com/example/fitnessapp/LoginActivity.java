@@ -23,7 +23,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.scottyab.aescrypt.AESCrypt;
 
-
 import java.security.GeneralSecurityException;
 import java.util.Locale;
 

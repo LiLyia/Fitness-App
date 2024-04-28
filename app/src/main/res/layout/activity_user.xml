@@ -17,6 +17,11 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:onClick="onCalendarClick"
+            android:text="@string/calendar"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:onClick="onChangePasswordClick"
             android:text="@string/change_password"/>
         <Button

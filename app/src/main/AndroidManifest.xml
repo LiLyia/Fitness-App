@@ -21,6 +21,7 @@
         <activity android:name=".AdminActivity" />
         <activity android:name=".AddUserActivity" />
         <activity android:name=".UserManagementActivity" />
+        <activity android:name=".CalendarActivity" />
 
         <activity
             android:name=".LoginActivity"
