@@ -72,14 +72,10 @@ public class LoginActivity extends AppCompatActivity {
                                 if (type.equals("user")) {
                                     Intent intent = new Intent(LoginActivity.this, UserActivity.class);
                                     startActivity(intent);
+                                } else {
+                                    Intent intent = new Intent(LoginActivity.this, AdminActivity.class);
+                                    startActivity(intent);
                                 }
-//                                else if (type.equals("manager")) {
-//                                    Intent intent = new Intent(LoginActivity.this, ManagerActivity.class);
-//                                    startActivity(intent);
-//                                } else {
-//                                    Intent intent = new Intent(LoginActivity.this, AdminActivity.class);
-//                                    startActivity(intent);
-//                                }
                             } else {
                                 Toast.makeText(LoginActivity.this, R.string.wrond_password, Toast.LENGTH_SHORT).show();
                             }

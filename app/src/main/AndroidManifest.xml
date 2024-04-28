@@ -18,6 +18,9 @@
         <activity android:name=".RestorePasswordActivity" />
         <activity android:name=".EmptyActivity" />
         <activity android:name=".UserActivity" />
+        <activity android:name=".AdminActivity" />
+        <activity android:name=".AddUserActivity" />
+        <activity android:name=".UserManagementActivity" />
 
         <activity
             android:name=".LoginActivity"

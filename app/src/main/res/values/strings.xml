@@ -40,4 +40,8 @@
     <string name="change_password">Change Password</string>
     <string name="log_out">Log Out</string>
     <string name="button">Button</string>
+    <string name="add">add</string>
+    <string name="back">back</string>
+    <string name="delete">delete</string>
+    <string name="user_management">User Management</string>
 </resources>

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:layout_margin="20dp"
     android:orientation="vertical"
-    tools:context=".UserActivity">
+    tools:context=".AdminActivity">
 
     <LinearLayout
         android:id="@+id/input"
@@ -15,6 +15,13 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/button_user_management"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onUserManagementClick"
+            android:text="@string/user_management"/>
+        <Button
+            android:id="@+id/button_change_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onChangePasswordClick"
