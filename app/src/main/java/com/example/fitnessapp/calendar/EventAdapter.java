@@ -1,4 +1,4 @@
-package com.example.fitnessapp;
+package com.example.fitnessapp.calendar;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.example.fitnessapp.R;
 
 import java.util.List;
 

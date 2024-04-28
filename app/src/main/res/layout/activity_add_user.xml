@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:layout_margin="20dp"
     android:orientation="vertical"
-    tools:context=".AddUserActivity">
+    tools:context=".account.AddUserActivity">
 
     <LinearLayout
         android:id="@+id/input"

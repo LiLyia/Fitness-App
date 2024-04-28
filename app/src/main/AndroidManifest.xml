@@ -12,21 +12,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitnessAPP"
         tools:targetApi="31">
-        <activity android:name=".ChangePasswordActivity" />
-        <activity android:name=".RegisterActivity" />
-        <activity android:name=".ResetPasswordActivity" />
-        <activity android:name=".RestorePasswordActivity" />
+        <activity android:name=".account.ChangePasswordActivity" />
+        <activity android:name=".account.RegisterActivity" />
+        <activity android:name=".account.ResetPasswordActivity" />
+        <activity android:name=".account.RestorePasswordActivity" />
         <activity android:name=".EmptyActivity" />
-        <activity android:name=".UserActivity" />
-        <activity android:name=".AdminActivity" />
-        <activity android:name=".AddUserActivity" />
-        <activity android:name=".UserManagementActivity" />
-        <activity android:name=".CalendarActivity" />
-        <activity android:name=".EventEditActivity" />
-        <activity android:name=".WeekViewActivity" />
+        <activity android:name=".account.UserActivity" />
+        <activity android:name=".account.AdminActivity" />
+        <activity android:name=".account.AddUserActivity" />
+        <activity android:name=".account.UserManagementActivity" />
+        <activity android:name=".calendar.CalendarActivity" />
+        <activity android:name=".calendar.EventEditActivity" />
+        <activity android:name=".calendar.WeekViewActivity" />
 
         <activity
-            android:name=".LoginActivity"
+            android:name=".account.LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

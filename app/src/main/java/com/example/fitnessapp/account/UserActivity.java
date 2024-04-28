@@ -1,4 +1,4 @@
-package com.example.fitnessapp;
+package com.example.fitnessapp.account;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +9,9 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.fitnessapp.calendar.CalendarActivity;
+import com.example.fitnessapp.R;
 
 public class UserActivity extends AppCompatActivity {
 

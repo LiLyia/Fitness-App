@@ -1,4 +1,4 @@
-package com.example.fitnessapp;
+package com.example.fitnessapp.calendar;
 
 import android.app.TimePickerDialog;
 import android.content.Context;
@@ -10,6 +10,8 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.fitnessapp.R;
 
 import java.time.Clock;
 import java.time.LocalTime;
