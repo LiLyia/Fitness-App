@@ -32,8 +32,8 @@ public class EventEditActivity extends AppCompatActivity {
         setContentView(R.layout.activity_event_edit);
         initWidgets();
         time = LocalTime.now(Clock.system(ZoneId.of("Europe/Budapest")));
-        eventDateTV.setText("Date: " + CalendarUtils.formattedDate(CalendarUtils.selectedDate));
-        eventTimeTV.setText("Time: " + CalendarUtils.formattedTime(time));
+        eventDateTV.setText(getResources().getString(R.string.date) + ": " + CalendarUtils.formattedDate(CalendarUtils.selectedDate));
+        eventTimeTV.setText(getResources().getString(R.string.time) + ": " + CalendarUtils.formattedTime(time));
     }
 
     private void initWidgets() {

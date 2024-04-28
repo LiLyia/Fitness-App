@@ -48,4 +48,18 @@
     <string name="back_calendar"><![CDATA[<-]]></string>
     <string name="forward_calendar"><![CDATA[->]]></string>
     <string name="calendar">x</string>
+    <string name="date">x</string>
+    <string name="name">x</string>
+    <string name="time">x</string>
+    <string name="change_time">x</string>
+    <string name="save_event">x</string>
+    <string name="new_event">x</string>
+    <string name="weekly">x</string>
+    <string name="monday">x</string>
+    <string name="tuesday">x</string>
+    <string name="wednesday">x</string>
+    <string name="thursday">x</string>
+    <string name="friday">x</string>
+    <string name="saturday">x</string>
+    <string name="sunday">x</string>
 </resources>
