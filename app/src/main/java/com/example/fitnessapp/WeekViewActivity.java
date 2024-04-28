@@ -3,7 +3,9 @@ package com.example.fitnessapp;
 import static com.example.fitnessapp.CalendarUtils.daysInWeekArray;
 import static com.example.fitnessapp.CalendarUtils.monthYearFromDate;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
@@ -15,12 +17,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class WeekViewActivity extends AppCompatActivity implements CalendarAdapter.OnItemListener
 {
     private TextView monthYearText;
     private RecyclerView calendarRecyclerView;
     private ListView eventListView;
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +76,11 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
 
     private void setEventAdpater() {
         ArrayList<Event> dailyEvents = Event.eventsForDate(CalendarUtils.selectedDate);
-        EventAdapter eventAdapter = new EventAdapter(getApplicationContext(), dailyEvents);
+        sharedPreferences = getSharedPreferences("myprefs", Context.MODE_PRIVATE);
+        String usernameText = sharedPreferences.getString("username", "defvalue");
+        ArrayList<Event> dailyEventsOfCurrentUser = dailyEvents.stream()
+                .filter(e -> e.getUsername().equals(usernameText)).collect(Collectors.toCollection(ArrayList::new));
+        EventAdapter eventAdapter = new EventAdapter(getApplicationContext(), dailyEventsOfCurrentUser);
         eventListView.setAdapter(eventAdapter);
     }
 

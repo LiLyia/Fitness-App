@@ -1,6 +1,8 @@
 package com.example.fitnessapp;
 
 import android.app.TimePickerDialog;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -20,6 +22,7 @@ public class EventEditActivity extends AppCompatActivity {
     private LocalTime time;
     private int hour;
     private int minute;
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +57,9 @@ public class EventEditActivity extends AppCompatActivity {
 
     public void saveEventAction(View view) {
         String eventName = eventNameET.getText().toString();
-        Event newEvent = new Event(eventName, CalendarUtils.selectedDate, time);
+        sharedPreferences = getSharedPreferences("myprefs", Context.MODE_PRIVATE);
+        String username = sharedPreferences.getString("username", "defvalue");
+        Event newEvent = new Event(eventName, CalendarUtils.selectedDate, time, username);
         Event.eventsList.add(newEvent);
         finish();
     }

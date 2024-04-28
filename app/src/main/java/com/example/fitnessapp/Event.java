@@ -21,11 +21,27 @@ public class Event {
     private String name;
     private LocalDate date;
     private LocalTime time;
+    private String username;
 
     public Event(String name, LocalDate date, LocalTime time) {
         this.name = name;
         this.date = date;
         this.time = time;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public Event(String name, LocalDate date, LocalTime time, String username) {
+        this.name = name;
+        this.date = date;
+        this.time = time;
+        this.username = username;
     }
 
     public String getName() {
