@@ -22,6 +22,8 @@
         <activity android:name=".AddUserActivity" />
         <activity android:name=".UserManagementActivity" />
         <activity android:name=".CalendarActivity" />
+        <activity android:name=".EventEditActivity" />
+        <activity android:name=".WeekViewActivity" />
 
         <activity
             android:name=".LoginActivity"
