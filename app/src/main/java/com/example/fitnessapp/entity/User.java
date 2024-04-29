@@ -1,4 +1,4 @@
-package com.example.fitnessapp.account;
+package com.example.fitnessapp.entity;
 
 public class User {
 

@@ -12,6 +12,7 @@ import android.widget.TimePicker;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.fitnessapp.R;
+import com.example.fitnessapp.entity.Event;
 import com.example.fitnessapp.util.CalendarUtils;
 
 import java.time.Clock;

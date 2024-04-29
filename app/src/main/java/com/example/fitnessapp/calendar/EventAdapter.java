@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.fitnessapp.R;
+import com.example.fitnessapp.entity.Event;
 import com.example.fitnessapp.util.CalendarUtils;
 
 import java.util.List;
