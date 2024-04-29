@@ -1,4 +1,4 @@
-package com.example.fitnessapp.calendar;
+package com.example.fitnessapp.util;
 
 import java.time.DayOfWeek;
 import java.time.LocalDate;

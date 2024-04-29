@@ -1,7 +1,7 @@
 package com.example.fitnessapp.calendar;
 
-import static com.example.fitnessapp.calendar.CalendarUtils.daysInWeekArray;
-import static com.example.fitnessapp.calendar.CalendarUtils.monthYearFromDate;
+import static com.example.fitnessapp.util.CalendarUtils.daysInWeekArray;
+import static com.example.fitnessapp.util.CalendarUtils.monthYearFromDate;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fitnessapp.R;
+import com.example.fitnessapp.util.CalendarUtils;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
