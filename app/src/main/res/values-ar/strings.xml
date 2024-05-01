@@ -62,4 +62,6 @@
     <string name="friday">x</string>
     <string name="saturday">x</string>
     <string name="sunday">x</string>
+    <string name="reco_card">x</string>
+    <string name="recommendations">x</string>
 </resources>
