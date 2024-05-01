@@ -62,4 +62,6 @@
     <string name="friday">星期五</string>
     <string name="saturday">星期六</string>
     <string name="sunday">星期天</string>
+    <string name="reco_card">x</string>
+    <string name="recommendations">x</string>
 </resources>
