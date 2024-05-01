@@ -83,7 +83,8 @@ public class WeekViewActivity extends AppCompatActivity implements CalendarAdapt
         sharedPreferences = getSharedPreferences("myprefs", Context.MODE_PRIVATE);
         String usernameText = sharedPreferences.getString("username", "defvalue");
         ArrayList<Event> dailyEventsOfCurrentUser = dailyEvents.stream()
-                .filter(e -> e.getUsername().equals(usernameText)).collect(Collectors.toCollection(ArrayList::new));
+                .filter(e -> e.getUsername().equals(usernameText))
+                .collect(Collectors.toCollection(ArrayList::new));
         EventAdapter eventAdapter = new EventAdapter(getApplicationContext(), dailyEventsOfCurrentUser);
         eventListView.setAdapter(eventAdapter);
     }
