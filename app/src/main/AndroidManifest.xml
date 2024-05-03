@@ -12,27 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FitnessAPP"
         tools:targetApi="31">
-        <activity
-            android:name=".tracking.HydrationActivity"
-            android:exported="false" />
-        <activity
-            android:name=".tracking.ExercisesActivity"
-            android:exported="false" />
-        <activity
-            android:name=".tracking.MealsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".tracking.AddHydrationActivity"
-            android:exported="false" />
-        <activity
-            android:name=".tracking.AddMealActivity"
-            android:exported="false" />
-        <activity
-            android:name=".tracking.AddExerciseActivity"
-            android:exported="false" />
-        <activity
-            android:name=".tracking.TrackingActivity"
-            android:exported="false" />
         <activity android:name=".account.ChangePasswordActivity" />
         <activity android:name=".account.RegisterActivity" />
         <activity android:name=".account.ResetPasswordActivity" />
@@ -45,6 +24,7 @@
         <activity android:name=".calendar.CalendarActivity" />
         <activity android:name=".calendar.EventEditActivity" />
         <activity android:name=".calendar.WeekViewActivity" />
+
         <activity
             android:name=".account.LoginActivity"
             android:exported="true">
