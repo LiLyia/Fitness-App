@@ -6,14 +6,18 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.fitnessapp.R;
+import com.example.fitnessapp.account.LoginActivity;
 import com.example.fitnessapp.account.UserActivity;
 import com.example.fitnessapp.calendar.CalendarActivity;
+import com.example.fitnessapp.entity.Ad;
+import com.example.fitnessapp.entity.Exercise;
 import com.example.fitnessapp.entity.Recipe;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -48,21 +52,89 @@ public class ListRecosActivity extends AppCompatActivity {
         recipesLayout = findViewById(R.id.recipes_layout);
         db = FirebaseDatabase.getInstance();
         reference = db.getReference("recipes");
-        String name = "Protein cheesecake";
-        int priority = 1;
-        String ingredients = "Almond flour\n" + "Protein powder\n" + "Sweetener - 2 tablespoons\n" + "Salted butter - 4 tablespoons\n" + "Cottage cheese\n" + "Cream cheese\n" + "Eggs";
-        /*ingredients.add("Almond flour");
-        ingredients.add("Protein powder");
-        ingredients.add("Sweetener - 2 tablespoons");
-        ingredients.add("Salted butter - 4 tablespoons");
-        ingredients.add("Cottage cheese");
-        ingredients.add("Cream cheese");
-        ingredients.add("Eggs"); */
-        String type = "recipe";
-        String instruction = "How to make almond crust?\n" + "Step One: In a large food processor pulse the almond flour, protein powder, 2 tablespoon sweetener, and 4 tablespoon butter until a coarse dough forms. It may seem dry at first but will come together in a ball. \n" + "Step Two: Press into the bottom of an 8-inch springform pan to form a crust.\n" + "Step Three: Put in the oven and bake for 8 minutes.\n" + "How to make the cheesecake?\n" + "Step One: Since you've just baked the crust at 350 degrees, reduce the oven temperature to 275 degrees. \n" +
-                "Step Two: Combine the cottage cheese and the cream cheese in the food processor (you don’t need to wash the bowl). Pulse the cheeses until smooth. Add the protein powder, sweetener, and extract. Mix until combined.\n" + "Step Three: Add the eggs. Blend until smooth. You will need to scrape down the sides. Pour the cheesecake mixture over the crust. The cheesecake filling should spread out evenly in the pan once you pour it in but if you need to gently shake the pan or tap it, do so.\n" + "Step Four: Bake the protein cheesecake for 90 minutes until the center no longer jiggles when the pan is lightly shaken. Cool completely. Refrigerate for at least 4 hours before serving.";
-        Recipe newr = new Recipe(name, priority, ingredients, instruction);
+        String name = "";
+        int priority = 4;
+        String ingredients = "";
+        String instruction = "";
+        Recipe newr = new Recipe(ingredients, instruction, name, priority, "recipe");
         reference.setValue(newr);
+        /*name = "";
+        priority = 2;
+        ingredients = "";
+        instruction = "";
+        Recipe newr2 = new Recipe(name, priority, ingredients, instruction);
+        reference.setValue(newr2);
+        name = "";
+        priority = 3;
+        ingredients = "";
+        instruction = "";
+        Recipe newr3 = new Recipe(name, priority, ingredients, instruction);
+        reference.setValue(newr3);
+        name = "";
+        priority = 5;
+        ingredients = "";
+        instruction = "";
+        Recipe newr4 = new Recipe(name, priority, ingredients, instruction);
+        reference.setValue(newr4);
+        reference = db.getReference("exercises");
+        name = "";
+        priority = 2;
+        List<String> instructions = new ArrayList<>();
+        List<String> images = new ArrayList<>();
+        Exercise ex1 = new Exercise(name, priority, instructions, images);
+        reference.setValue(ex1);
+        name = "";
+        priority = 1;
+        instructions = new ArrayList<>();
+        images = new ArrayList<>();
+        Exercise ex2 = new Exercise(name, priority, instructions, images);
+        reference.setValue(ex2);
+        name = "";
+        priority = 4;
+        instructions = new ArrayList<>();
+        images = new ArrayList<>();
+        Exercise ex3 = new Exercise(name, priority, instructions, images);
+        reference.setValue(ex3);
+        name = "";
+        priority = 5;
+        instructions = new ArrayList<>();
+        images = new ArrayList<>();
+        Exercise ex4 = new Exercise(name, priority, instructions, images);
+        reference.setValue(ex4);
+        name = "";
+        priority = 3;
+        instructions = new ArrayList<>();
+        images = new ArrayList<>();
+        Exercise ex5 = new Exercise(name, priority, instructions, images);
+        reference.setValue(ex5);
+
+        name = "";
+        priority = 1;
+        String description = "";
+        reference = db.getReference("ads");
+        Ad ad1 = new Ad(name, priority, description);
+        reference.setValue(ad1);
+        name = "";
+        priority = 2;
+        description = "";
+        Ad ad2 = new Ad(name, priority, description);
+        reference.setValue(ad2);
+        name = "";
+        priority = 3;
+        description = "";
+        Ad ad3 = new Ad(name, priority, description);
+        reference.setValue(ad3);
+        name = "";
+        priority = 4;
+        description = "";
+        Ad ad4 = new Ad(name, priority, description);
+        reference.setValue(ad4);
+        name = "";
+        priority = 5;
+        description = "";
+        Ad ad5 = new Ad(name, priority, description);
+        reference.setValue(ad5); */
+
     }
 
     private void fetchFromDatabase() {
@@ -78,13 +150,14 @@ public class ListRecosActivity extends AppCompatActivity {
                 Recipe recipe = snapshot.getValue(Recipe.class);
                 assert recipe != null;
                 if (!recipe.getType().equals("recipe")) {
+                    Toast.makeText(ListRecosActivity.this, "empty", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 recipeList.add(recipe);
 
                 View recipeView = getLayoutInflater().inflate(R.layout.recomendation, null);
                 TextView recipeName = recipeView.findViewById(R.id.cardName);
-
+                //Toast.makeText(ListRecosActivity.this, recipe.getName(), Toast.LENGTH_SHORT).show();
                 recipeName.setText(recipe.getName());
                 recipesLayout.addView(recipeView);
             }

@@ -61,8 +61,9 @@
     <string name="friday">FRI</string>
     <string name="saturday">SAT</string>
     <string name="sunday">SUN</string>
-    <string name="reco_card">Card name</string>
+    <string name="cardName">Card name</string>
     <string name="recommendations">Recommendations</string>
+    <string name="text">Test</string>
 
 
 </resources>
