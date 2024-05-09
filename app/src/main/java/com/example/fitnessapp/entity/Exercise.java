@@ -79,19 +79,22 @@ import java.util.List;
 public class Exercise {
     private String name;
     private int priority;
-    private List<String> instructions;
+    private String instruction;
     private List<String> images;
     private String type = "exercise";
     public Exercise() {}
-    public Exercise(String name, int priority, List<String> instructions, List<String> images) {
+    public Exercise(String instruction, String name, int priority, String type) {
         this.name = name;
         this.priority = priority;
-        this.instructions = instructions;
-        this.images = images;
+        this.instruction = instruction;
+        this.type = type;
+    }
+    public void loadImages(String path) {
+
     }
     public String getName() {return name;}
     public int getPriority() {return priority;}
-    public List<String> getInstructions() {return instructions;}
+    public String getInstruction() {return instruction;}
     public List<String> getImages() {return images;}
     public String getType() {return type;}
 >>>>>>> dc4980b (scroll view and data reading fixed)
