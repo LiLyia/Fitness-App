@@ -29,120 +29,33 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListRecosActivity extends AppCompatActivity {
-    DatabaseReference addsReference;
+    DatabaseReference adsReference;
     DatabaseReference exerciseReference;
     DatabaseReference recipesReference;
     FirebaseDatabase db;
     DatabaseReference reference;
 
     private SharedPreferences sharedPreferences;
-    private LinearLayout addsLayout;
+    private LinearLayout adsLayout;
     private LinearLayout exerciseLayout;
     private LinearLayout recipesLayout;
     List<Recipe> recipeList = new ArrayList<>();
+    List<Ad> adsList = new ArrayList<>();
+    List<Exercise> exerciseList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_recos);
-        //putToDatabase();
         fetchFromDatabase();
     }
 
-    private void putToDatabase() {
-        recipesLayout = findViewById(R.id.recipes_layout);
-        db = FirebaseDatabase.getInstance();
-        reference = db.getReference("recipes");
-        String name = "";
-        int priority = 4;
-        String ingredients = "";
-        String instruction = "";
-        Recipe newr = new Recipe(ingredients, instruction, name, priority, "recipe");
-        reference.setValue(newr);
-        /*name = "";
-        priority = 2;
-        ingredients = "";
-        instruction = "";
-        Recipe newr2 = new Recipe(name, priority, ingredients, instruction);
-        reference.setValue(newr2);
-        name = "";
-        priority = 3;
-        ingredients = "";
-        instruction = "";
-        Recipe newr3 = new Recipe(name, priority, ingredients, instruction);
-        reference.setValue(newr3);
-        name = "";
-        priority = 5;
-        ingredients = "";
-        instruction = "";
-        Recipe newr4 = new Recipe(name, priority, ingredients, instruction);
-        reference.setValue(newr4);
-        reference = db.getReference("exercises");
-        name = "";
-        priority = 2;
-        List<String> instructions = new ArrayList<>();
-        List<String> images = new ArrayList<>();
-        Exercise ex1 = new Exercise(name, priority, instructions, images);
-        reference.setValue(ex1);
-        name = "";
-        priority = 1;
-        instructions = new ArrayList<>();
-        images = new ArrayList<>();
-        Exercise ex2 = new Exercise(name, priority, instructions, images);
-        reference.setValue(ex2);
-        name = "";
-        priority = 4;
-        instructions = new ArrayList<>();
-        images = new ArrayList<>();
-        Exercise ex3 = new Exercise(name, priority, instructions, images);
-        reference.setValue(ex3);
-        name = "";
-        priority = 5;
-        instructions = new ArrayList<>();
-        images = new ArrayList<>();
-        Exercise ex4 = new Exercise(name, priority, instructions, images);
-        reference.setValue(ex4);
-        name = "";
-        priority = 3;
-        instructions = new ArrayList<>();
-        images = new ArrayList<>();
-        Exercise ex5 = new Exercise(name, priority, instructions, images);
-        reference.setValue(ex5);
-
-        name = "";
-        priority = 1;
-        String description = "";
-        reference = db.getReference("ads");
-        Ad ad1 = new Ad(name, priority, description);
-        reference.setValue(ad1);
-        name = "";
-        priority = 2;
-        description = "";
-        Ad ad2 = new Ad(name, priority, description);
-        reference.setValue(ad2);
-        name = "";
-        priority = 3;
-        description = "";
-        Ad ad3 = new Ad(name, priority, description);
-        reference.setValue(ad3);
-        name = "";
-        priority = 4;
-        description = "";
-        Ad ad4 = new Ad(name, priority, description);
-        reference.setValue(ad4);
-        name = "";
-        priority = 5;
-        description = "";
-        Ad ad5 = new Ad(name, priority, description);
-        reference.setValue(ad5); */
-
-    }
 
     private void fetchFromDatabase() {
-        addsLayout = findViewById(R.id.adds_layout);
+        adsLayout = findViewById(R.id.adds_layout);
         exerciseLayout = findViewById(R.id.exercises_layout);
         recipesLayout = findViewById(R.id.recipes_layout);
-        //addsReference = FirebaseDatabase.getInstance().getReference("adds");
-        //exerciseReference = FirebaseDatabase.getInstance().getReference("exercises");
+        adsReference = FirebaseDatabase.getInstance().getReference("ads");
+        exerciseReference = FirebaseDatabase.getInstance().getReference("reco_exercises");
         recipesReference = FirebaseDatabase.getInstance().getReference("recipes");
         recipesReference.orderByChild("name").addChildEventListener(new ChildEventListener() {
             @Override
@@ -182,6 +95,72 @@ public class ListRecosActivity extends AppCompatActivity {
 
             }
 
+        });
+        adsReference.orderByChild("name").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                Ad ad = snapshot.getValue(Ad.class);
+                assert ad != null;
+                if (!ad.getType().equals("ad")) return;
+                adsList.add(ad);
+                View adsView = getLayoutInflater().inflate(R.layout.recomendation, null);
+                TextView adName = adsView.findViewById(R.id.cardName);
+                adName.setText(ad.getName());
+                adsLayout.addView(adsView);
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        exerciseReference.orderByChild("name").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                Exercise exercise = snapshot.getValue(Exercise.class);
+                assert exercise != null;
+                if (!exercise.getType().equals("exercise")) return;
+                exerciseList.add(exercise);
+                View exerciseView = getLayoutInflater().inflate(R.layout.recomendation, null);
+                TextView exName = exerciseView.findViewById(R.id.cardName);
+                exName.setText(exercise.getName());
+                exerciseLayout.addView(exerciseView);
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
         });
 
     }
