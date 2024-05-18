@@ -7,18 +7,12 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.fitnessapp.R;
-import com.example.fitnessapp.account.UserActivity;
 import com.example.fitnessapp.entity.Meal;
-import com.example.fitnessapp.entity.TrackingCategory;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
