@@ -61,6 +61,7 @@
     <string name="friday">FRI</string>
     <string name="saturday">SAT</string>
     <string name="sunday">SUN</string>
+    <string name="edit">edit</string>
 
 
 </resources>
