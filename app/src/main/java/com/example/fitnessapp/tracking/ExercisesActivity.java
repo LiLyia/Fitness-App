@@ -146,6 +146,13 @@ public class ExercisesActivity extends AppCompatActivity {
         });
     }
 
+    public void OnViewDetailsClick(View view) {
+//        LinearLayout parent = (LinearLayout) view.getParent().getParent();
+//        Intent intent = new Intent(ExercisesActivity.this, AddExerciseActivity.class);
+//        intent.putExtra()
+//        startActivity(intent);
+    }
+
 
 
 }

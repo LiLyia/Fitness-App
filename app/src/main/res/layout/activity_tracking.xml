@@ -42,10 +42,11 @@
         android:gravity="center"
         android:layout_above="@+id/input"
         android:orientation="vertical">
+
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher"/>
+            android:layout_width="218dp"
+            android:layout_height="117dp"
+            android:src="@drawable/tracking" />
     </LinearLayout>
     <TextView
         android:layout_width="wrap_content"
