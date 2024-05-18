@@ -7,18 +7,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.example.fitnessapp.R;
+import com.example.fitnessapp.account.UserManagementActivity;
 import com.example.fitnessapp.entity.Exercise;
-import com.example.fitnessapp.entity.Meal;
+import com.example.fitnessapp.entity.User;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -37,6 +35,8 @@ public class ExercisesActivity extends AppCompatActivity {
     TextView excTxtView , excDateView;
     View excView;
     Button viewDetailsBtn;
+
+    Button deleteBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +61,7 @@ public class ExercisesActivity extends AppCompatActivity {
                 excTxtView = excView.findViewById(R.id.category);
                 excDateView = excView.findViewById(R.id.date);
                 viewDetailsBtn = excView.findViewById(R.id.viewDetailsBtn);
+                deleteBtn = excView.findViewById(R.id.delete_button);
 
                 System.out.println("date " +exercise.getDate());
 
@@ -104,6 +105,46 @@ public class ExercisesActivity extends AppCompatActivity {
         Intent intent = new Intent(ExercisesActivity.this, AddExerciseActivity.class);
         finishAffinity();
         startActivity(intent);
+    }
+
+    public void onDeleteClick(View view) {
+        LinearLayout parent = (LinearLayout) view.getParent().getParent();
+        TextView category = parent.findViewById(R.id.category);
+        String categoryText = category.getText().toString();
+
+        reference = FirebaseDatabase.getInstance().getReference("exercise");
+        reference.orderByChild("activityType").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                Exercise exercise = snapshot.getValue(Exercise.class);
+                if (exercise.getActivityType().equals(categoryText)) {
+                    reference.child(categoryText).removeValue();
+                    Toast.makeText(ExercisesActivity.this, R.string.success, Toast.LENGTH_SHORT).show();
+                    finish();
+                    startActivity(getIntent());
+                }
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
 

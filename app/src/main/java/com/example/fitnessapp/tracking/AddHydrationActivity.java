@@ -14,7 +14,6 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.fitnessapp.R;
-import com.example.fitnessapp.account.UserActivity;
 import com.example.fitnessapp.entity.Hydration;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;

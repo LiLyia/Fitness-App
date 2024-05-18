@@ -10,12 +10,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.fitnessapp.calendar.CalendarActivity;
 import com.example.fitnessapp.R;
-import com.example.fitnessapp.tracking.AddExerciseActivity;
-import com.example.fitnessapp.tracking.AddHydrationActivity;
-import com.example.fitnessapp.tracking.AddMealActivity;
-import com.example.fitnessapp.tracking.MealsActivity;
+import com.example.fitnessapp.calendar.CalendarActivity;
 import com.example.fitnessapp.tracking.TrackingActivity;
 
 public class UserActivity extends AppCompatActivity {

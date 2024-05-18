@@ -42,7 +42,7 @@
     <string name="button">Button</string>
     <string name="add">add</string>
     <string name="back">back</string>
-    <string name="delete">delete</string>
+    <string name="delete">Delete</string>
     <string name="user_management">User Management</string>
     <string name="back_calendar"><![CDATA[<-]]></string>
     <string name="forward_calendar"><![CDATA[->]]></string>
