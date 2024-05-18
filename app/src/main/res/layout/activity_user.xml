@@ -18,61 +18,67 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onCalendarClick"
-            android:text="@string/calendar"/>
+            android:text="@string/calendar" />
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onChangePasswordClick"
-            android:text="@string/change_password"/>
-        <Button
-            android:id="@+id/button_log_out"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onLogOutClick"
-            android:text="@string/log_out"/>
+            android:text="@string/change_password" />
 
         <Button
             android:id="@+id/button_browse"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onBrowseClick"
-            android:text="@string/browse"/>
+            android:text="@string/browse" />
 
-<!--        <Button-->
-<!--            android:id="@+id/button_activities"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:onClick="onAddExClick"-->
-<!--            android:text="@string/activities"/>-->
-<!--        <Button-->
-<!--            android:id="@+id/button_add_meal"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:onClick="onAddMealClick"-->
-<!--            android:text="@string/meals"/>-->
-<!--        <Button-->
-<!--            android:id="@+id/button_add_hydration"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:onClick="onAddHydrationClick"-->
-<!--            android:text="@string/hydration"/>-->
+        <Button
+            android:id="@+id/button_log_out"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onLogOutClick"
+            android:text="@string/log_out" />
+
+
+        <!--        <Button-->
+        <!--            android:id="@+id/button_activities"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:onClick="onAddExClick"-->
+        <!--            android:text="@string/activities"/>-->
+        <!--        <Button-->
+        <!--            android:id="@+id/button_add_meal"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:onClick="onAddMealClick"-->
+        <!--            android:text="@string/meals"/>-->
+        <!--        <Button-->
+        <!--            android:id="@+id/button_add_hydration"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:onClick="onAddHydrationClick"-->
+        <!--            android:text="@string/hydration"/>-->
 
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
         android:layout_above="@+id/input"
+        android:gravity="center"
         android:orientation="vertical">
+
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher"/>
+            android:src="@mipmap/ic_launcher" />
     </LinearLayout>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:text="@string/copyright"/>
+        android:text="@string/copyright" />
 </RelativeLayout>
