@@ -12,6 +12,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.fitnessapp.calendar.CalendarActivity;
 import com.example.fitnessapp.R;
+import com.example.fitnessapp.tracking.AddExerciseActivity;
+import com.example.fitnessapp.tracking.AddHydrationActivity;
+import com.example.fitnessapp.tracking.AddMealActivity;
+import com.example.fitnessapp.tracking.MealsActivity;
+import com.example.fitnessapp.tracking.TrackingActivity;
 
 public class UserActivity extends AppCompatActivity {
 
@@ -42,4 +47,30 @@ public class UserActivity extends AppCompatActivity {
         finishAffinity();
         startActivity(intent);
     }
+    public void onBrowseClick(View view) {
+        System.out.println("Brwose click");
+
+        Intent intent = new Intent(UserActivity.this, TrackingActivity.class);
+        finishAffinity();
+        startActivity(intent);
+    }
+
+//    public void onAddExClick(View view) {
+//        System.out.println("Activities click");
+//        Intent intent = new Intent(UserActivity.this, AddExerciseActivity.class);
+//        finishAffinity();
+//        startActivity(intent);
+//    }
+//    public void onAddMealClick(View view) {
+//        System.out.println("Meal click");
+//        Intent intent = new Intent(UserActivity.this, MealsActivity.class);
+//        finishAffinity();
+//        startActivity(intent);
+//    }
+//    public void onAddHydrationClick(View view) {
+//        System.out.println("Hydration click");
+//        Intent intent = new Intent(UserActivity.this, AddHydrationActivity.class);
+//        finishAffinity();
+//        startActivity(intent);
+//    }
 }

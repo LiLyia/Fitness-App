@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:layout_margin="20dp"
     android:orientation="vertical"
-    tools:context=".account.UserActivity">
+    tools:context=".tracking.TrackingActivity">
 
     <LinearLayout
         android:id="@+id/input"
@@ -14,48 +14,26 @@
         android:layout_centerInParent="true"
         android:orientation="vertical">
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onCalendarClick"
-            android:text="@string/calendar"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onChangePasswordClick"
-            android:text="@string/change_password"/>
-        <Button
-            android:id="@+id/button_log_out"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onLogOutClick"
-            android:text="@string/log_out"/>
+
 
         <Button
-            android:id="@+id/button_browse"
+            android:id="@+id/button_activities"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onBrowseClick"
-            android:text="@string/browse"/>
-
-<!--        <Button-->
-<!--            android:id="@+id/button_activities"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:onClick="onAddExClick"-->
-<!--            android:text="@string/activities"/>-->
-<!--        <Button-->
-<!--            android:id="@+id/button_add_meal"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:onClick="onAddMealClick"-->
-<!--            android:text="@string/meals"/>-->
-<!--        <Button-->
-<!--            android:id="@+id/button_add_hydration"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:onClick="onAddHydrationClick"-->
-<!--            android:text="@string/hydration"/>-->
+            android:onClick="onAddExClick"
+            android:text="@string/activities"/>
+        <Button
+            android:id="@+id/button_add_meal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onAddMealClick"
+            android:text="@string/meals"/>
+        <Button
+            android:id="@+id/button_add_hydration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onAddHydrationClick"
+            android:text="@string/hydration"/>
 
     </LinearLayout>
     <LinearLayout
