@@ -109,7 +109,6 @@ public class MealsActivity extends AppCompatActivity {
     public void OnAddMealClick(View view) {
         System.out.println("On Add Meal Click");
         Intent intent = new Intent(MealsActivity.this, AddMealActivity.class);
-        finishAffinity();
         startActivity(intent);
     }
 }

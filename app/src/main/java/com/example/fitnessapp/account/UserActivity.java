@@ -47,7 +47,6 @@ public class UserActivity extends AppCompatActivity {
         System.out.println("Brwose click");
 
         Intent intent = new Intent(UserActivity.this, TrackingActivity.class);
-        finishAffinity();
         startActivity(intent);
     }
 

@@ -35,19 +35,16 @@ public class TrackingActivity extends AppCompatActivity {
     public void onAddExClick(View view) {
         System.out.println("Activities click");
         Intent intent = new Intent(TrackingActivity.this, ExercisesActivity.class);
-        finishAffinity();
         startActivity(intent);
     }
     public void onAddMealClick(View view) {
         System.out.println("Meal click");
         Intent intent = new Intent(TrackingActivity.this, MealsActivity.class);
-        finishAffinity();
         startActivity(intent);
     }
     public void onAddHydrationClick(View view) {
         System.out.println("Hydration click");
         Intent intent = new Intent(TrackingActivity.this, AddHydrationActivity.class);
-        finishAffinity();
         startActivity(intent);
     }
 

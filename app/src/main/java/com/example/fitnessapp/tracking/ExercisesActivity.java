@@ -103,7 +103,6 @@ public class ExercisesActivity extends AppCompatActivity {
     public void OnAddExcClick(View view) {
         System.out.println("On Add exc Click");
         Intent intent = new Intent(ExercisesActivity.this, AddExerciseActivity.class);
-        finishAffinity();
         startActivity(intent);
     }
 

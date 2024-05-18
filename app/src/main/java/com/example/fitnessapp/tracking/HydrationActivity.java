@@ -95,7 +95,6 @@ public class HydrationActivity extends AppCompatActivity {
     public void OnAddExcClick(View view) {
         System.out.println("On Add exc Click");
         Intent intent = new Intent(HydrationActivity.this, AddHydrationActivity.class);
-        finishAffinity();
         startActivity(intent);
     }
 }
