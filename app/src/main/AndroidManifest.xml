@@ -26,6 +26,7 @@
         <activity android:name=".calendar.WeekViewActivity" />
         <activity android:name=".recommendations.ListRecosActivity" />
         <activity android:name=".recommendations.Horizontal_ScrollView" />
+        <activity android:name=".recommendations.RecommendationActivity"/>
 
         <activity
             android:name=".account.LoginActivity"

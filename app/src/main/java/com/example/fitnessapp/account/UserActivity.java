@@ -44,7 +44,6 @@ public class UserActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void onRecoClick(View view) {
-        System.out.println("Trying to open recos");
         Intent intent = new Intent(UserActivity.this, ListRecosActivity.class);
 
         startActivity(intent);
