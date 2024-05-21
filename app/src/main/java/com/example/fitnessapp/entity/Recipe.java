@@ -32,10 +32,10 @@ public class Recipe {
 
     public Recipe() {}
     public Recipe(String ingredients, String instruction, String name, int priority, String type) {
-        this.name = name;
-        this.priority = priority;
         this.ingredients = ingredients;
         this.instruction = instruction;
+        this.name = name;
+        this.priority = priority;
         this.type = type;
     }
     public String getType() {return type;}

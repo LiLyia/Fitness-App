@@ -64,6 +64,7 @@
     <string name="cardName">Card name</string>
     <string name="recommendations">Recommendations</string>
     <string name="text">Test</string>
+    <string name="titleReco">Title</string>
 
 
 </resources>
