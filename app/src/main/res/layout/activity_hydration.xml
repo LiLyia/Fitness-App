@@ -8,10 +8,10 @@
     tools:context=".tracking.HydrationActivity">
 
     <Button
-        android:id="@+id/button_add_meal"
+        android:id="@+id/button_add_hydration"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="OnHydrationExcClick"
+        android:onClick="OnHydrationClick"
         android:text="@string/add_hydration"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

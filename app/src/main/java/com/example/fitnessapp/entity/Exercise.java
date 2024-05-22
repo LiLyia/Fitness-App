@@ -1,6 +1,8 @@
 package com.example.fitnessapp.entity;
 
-public class Exercise {
+import java.io.Serializable;
+
+public class Exercise implements Serializable {
     String activityType;
     String duration;
     String distance;

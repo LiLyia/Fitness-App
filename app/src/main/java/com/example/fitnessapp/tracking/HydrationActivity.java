@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.fitnessapp.R;
 import com.example.fitnessapp.entity.Hydration;
+import com.example.fitnessapp.entity.Meal;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -29,7 +31,7 @@ public class HydrationActivity extends AppCompatActivity {
     private LinearLayout mainLayout;
     List<Hydration> hydrationList = new ArrayList<>();
     String amount;
-    TextView hydrationTxtView;
+    TextView hydrationTxtView , hydrationDateView;
     View hydrationView;
 
     @Override
@@ -53,15 +55,10 @@ public class HydrationActivity extends AppCompatActivity {
                 hydrationView= getLayoutInflater().inflate(R.layout.tracking_category_element, null);
 
                 hydrationTxtView = hydrationView.findViewById(R.id.category);
-                hydrationTxtView.setText(hydration.getAmount());
+                hydrationDateView = hydrationView.findViewById(R.id.date);
 
-                System.out.println("Cat txt:" + hydrationTxtView.getText());
-
-                hydrationTxtView.setOnClickListener(header -> {
-                    System.out.println("on click clicked");
-                    System.out.println(hydrationTxtView.getText().toString());
-                });
-
+                hydrationTxtView.setText(hydration.getHydrationType());
+                hydrationDateView.setText(hydration.getHydrationDate());
 
                 mainLayout.addView(hydrationView);
 
@@ -88,13 +85,92 @@ public class HydrationActivity extends AppCompatActivity {
             }
 
         });
-
-
     }
 
-    public void OnAddExcClick(View view) {
-        System.out.println("On Add exc Click");
+    public void OnHydrationClick(View view) {
         Intent intent = new Intent(HydrationActivity.this, AddHydrationActivity.class);
         startActivity(intent);
     }
+
+    public void onDeleteClick(View view) {
+        LinearLayout parent = (LinearLayout) view.getParent().getParent();
+        TextView category = parent.findViewById(R.id.category);
+        String categoryText = category.getText().toString();
+
+        reference = FirebaseDatabase.getInstance().getReference("hydration");
+        reference.orderByChild("hydrationType").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                Hydration hydration = snapshot.getValue(Hydration.class);
+                if (hydration.getHydrationType().equals(categoryText)) {
+                    reference.child(categoryText).removeValue();
+                    Toast.makeText(HydrationActivity.this, R.string.success, Toast.LENGTH_SHORT).show();
+                    finish();
+                    startActivity(getIntent());
+                }
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    public void OnViewDetailsClick(View view) {
+        LinearLayout parent = (LinearLayout) view.getParent().getParent();
+        TextView category = parent.findViewById(R.id.category);
+        String categoryText = category.getText().toString();
+
+        reference = FirebaseDatabase.getInstance().getReference("hydration");
+        reference.orderByChild("hydrationType").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                Hydration hydration = snapshot.getValue(Hydration.class);
+
+                if (hydration.getHydrationType().equals(categoryText)) {
+                    Intent intent = new Intent(HydrationActivity.this,
+                            HydrationDetailsActivity.class);
+                    intent.putExtra("hydration",hydration);
+                    startActivity(intent);
+                }
+            }
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
 }

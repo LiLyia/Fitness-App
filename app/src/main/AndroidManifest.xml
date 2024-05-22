@@ -13,6 +13,16 @@
         android:theme="@style/Theme.FitnessAPP"
         tools:targetApi="31">
         <activity
+            android:name=".tracking.HydrationDetailsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.FitnessAPP" />
+        <activity
+            android:name=".tracking.MealDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".tracking.ExerciseDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".tracking.HydrationActivity"
             android:exported="false" />
         <activity
