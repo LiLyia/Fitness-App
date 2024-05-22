@@ -27,6 +27,9 @@ public class AddHydrationActivity extends AppCompatActivity {
     EditText hydration;
     FirebaseDatabase db;
     DatabaseReference reference;
+    private EditText hydrationTypeTxt;
+    private EditText hydrationAmountTxt;
+    private EditText hydrationDateTxt;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,26 +40,30 @@ public class AddHydrationActivity extends AppCompatActivity {
     }
 
     public void find() {
-        hydration = findViewById(R.id.input_hydration);
+        hydrationTypeTxt = findViewById(R.id.input_hydration);
+        hydrationDateTxt = findViewById(R.id.input_hydration);
+        hydrationAmountTxt = findViewById(R.id.input_hydration);
     }
 
     public void onAddClick(View view) throws GeneralSecurityException {
-        String hydrationText = hydration.getText().toString();
+        String hydrationType = hydrationTypeTxt.getText().toString();
+        String hydrationAmount = hydrationAmountTxt.getText().toString();
+        String hydrationDate = hydrationDateTxt.getText().toString();
 
 
-        if (!hydrationText.isEmpty()) {
-//            String encryptedPasswordText = AESCrypt.encrypt("key", passwordText);
+        if (!hydrationType.isEmpty()) {
+////            String encryptedPasswordText = AESCrypt.encrypt("key", passwordText);
 
-            Hydration hydration = new Hydration(hydrationText);
+            Hydration hydration = new Hydration(hydrationType, hydrationDate, hydrationAmount);
             db = FirebaseDatabase.getInstance();
             reference = db.getReference("hydration");
 
-            reference.child(hydrationText).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+            reference.child(hydrationType).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<DataSnapshot> task) {
                     if (task.isSuccessful()) {
                         if (!task.getResult().exists()) {
-                            reference.child(hydrationText).setValue(hydration).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            reference.child(hydrationType).setValue(hydration).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     new AlertDialog.Builder(AddHydrationActivity.this)
@@ -66,7 +73,7 @@ public class AddHydrationActivity extends AppCompatActivity {
                                                 @Override
                                                 public void onClick(DialogInterface dialog, int which) {
                                                     Intent intent = new Intent(AddHydrationActivity.this, HydrationActivity.class);
-                                                    finishAffinity();
+//                                                    finishAffinity();
                                                     startActivity(intent);
                                                 }
                                             })
@@ -82,8 +89,8 @@ public class AddHydrationActivity extends AppCompatActivity {
                     }
                 }
             });
-
-        } else {
+        }
+    else {
             Toast.makeText(AddHydrationActivity.this, R.string.cannot_be_empty, Toast.LENGTH_SHORT).show();
         }
 

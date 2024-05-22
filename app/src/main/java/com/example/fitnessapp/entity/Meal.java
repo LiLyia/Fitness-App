@@ -1,6 +1,8 @@
 package com.example.fitnessapp.entity;
 
-public class Meal {
+import java.io.Serializable;
+
+public class Meal implements Serializable {
 
 
     public String getMealType() {
@@ -47,15 +49,25 @@ public class Meal {
     String carbs;
     String protein;
 
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    String date;
     public Meal() {
     }
 
-    public Meal(String mealType, String caloriesConsumed, String carbs, String protein, String sugar) {
+    public Meal(String mealType, String caloriesConsumed, String carbs, String protein, String sugar , String date) {
         this.mealType = mealType;
         this.caloriesConsumed = caloriesConsumed;
         this.carbs = carbs;
         this.protein = protein;
         this.sugar = sugar;
+        this.date = date;
     }
 
     String sugar;

@@ -24,7 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.security.GeneralSecurityException;
 
 public class AddMealActivity extends AppCompatActivity {
-    EditText mealType, caloriesConsumed, carbs,protein ,sugar;
+    EditText mealType, caloriesConsumed, carbs,protein ,sugar , date;
     FirebaseDatabase db;
     DatabaseReference reference;
 
@@ -42,6 +42,7 @@ public class AddMealActivity extends AppCompatActivity {
         carbs = findViewById(R.id.input_carbs);
         protein = findViewById(R.id.input_proteins);
         sugar = findViewById(R.id.input_sugar);
+        date = findViewById(R.id.meal_date_input);
     }
 
     public void onAddClick(View view) throws GeneralSecurityException {
@@ -50,12 +51,13 @@ public class AddMealActivity extends AppCompatActivity {
         String carbsText = carbs.getText().toString();
         String proteinText = protein.getText().toString();
         String sugarText = sugar.getText().toString();
+        String dateText = date.getText().toString();
 
 
         if (!mealTypeText.isEmpty() && !caloriesConsumedText.isEmpty() ) {
 //            String encryptedPasswordText = AESCrypt.encrypt("key", passwordText);
 
-            Meal meal = new Meal(mealTypeText, caloriesConsumedText,carbsText, proteinText ,sugarText);
+            Meal meal = new Meal(mealTypeText, caloriesConsumedText,carbsText, proteinText ,sugarText , dateText);
             db = FirebaseDatabase.getInstance();
             reference = db.getReference("meal");
             System.out.println("add meal");
@@ -96,7 +98,5 @@ public class AddMealActivity extends AppCompatActivity {
         }
 
     }
-
-
 
 }

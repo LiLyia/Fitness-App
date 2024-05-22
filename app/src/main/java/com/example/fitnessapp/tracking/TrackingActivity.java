@@ -44,7 +44,7 @@ public class TrackingActivity extends AppCompatActivity {
     }
     public void onAddHydrationClick(View view) {
         System.out.println("Hydration click");
-        Intent intent = new Intent(TrackingActivity.this, AddHydrationActivity.class);
+        Intent intent = new Intent(TrackingActivity.this, HydrationActivity.class);
         startActivity(intent);
     }
 

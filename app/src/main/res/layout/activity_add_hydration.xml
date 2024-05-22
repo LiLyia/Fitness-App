@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -20,24 +21,61 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="@string/hydration"
                 android:textSize="18dp"
-                android:textStyle="bold"
-                android:text="@string/hydration"/>
+                android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/input_hydration"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
-                android:id="@+id/input_hydration"
                 android:gravity="center"
-                android:hint="@string/hydration_hint"/>
+                android:hint="@string/hydration_type_hint" />
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hydration_amount"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/input_amount"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:hint="@string/hydration_hint" />
+    </LinearLayout>
+
+   <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/hydration_date"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/input_hydration_date"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:gravity="center"
+                android:hint="@string/hydration_date_hint" />
+
+    </LinearLayout>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:onClick="onAddClick"
-            android:text="@string/add"/>
-
+            android:text="@string/add" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -47,9 +85,9 @@
         android:orientation="vertical">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@mipmap/ic_launcher_round"/>
+            android:layout_width="158dp"
+            android:layout_height="138dp"
+            android:src="@drawable/hydration_icon" />
     </LinearLayout>
     <TextView
         android:layout_width="wrap_content"
@@ -57,4 +95,6 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:text="@string/copyright"/>
+
+
 </RelativeLayout>
