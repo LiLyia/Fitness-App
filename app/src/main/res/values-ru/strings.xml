@@ -103,4 +103,14 @@
     <string name="add_exercise">Add Exercise</string>
     <string name="add_hydration">Add Hydration</string>
     <string name="viewDetails">View Details</string>
+    <string name="exercise_type_dt">Exercise Type</string>
+    <string name="exercise_date_dt">Exercise Date</string>
+    <string name="duration_dt">Duration</string>
+    <string name="distance_dt">Distance</string>
+    <string name="energyExpended_dt">energy Expended</string>
+    <string name="hydration_amount">Amount</string>
+    <string name="hydration_type_hint">hydaration type</string>
+    <string name="hydration_date_hint">Add Date</string>
+    <string name="hydration_date">Date</string>
+    <string name="edit">Edit</string>
 </resources>
