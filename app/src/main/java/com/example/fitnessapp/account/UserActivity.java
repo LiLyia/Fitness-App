@@ -45,9 +45,8 @@ public class UserActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void onBrowseClick(View view) {
-        System.out.println("Brwose click");
-
         Intent intent = new Intent(UserActivity.this, TrackingActivity.class);
+        startActivity(intent);
     }
 
     public void onRecoClick(View view) {
