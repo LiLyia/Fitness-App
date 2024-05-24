@@ -103,4 +103,8 @@
     <string name="add_exercise">Add Exercise</string>
     <string name="add_hydration">Add Hydration</string>
     <string name="viewDetails">View Details</string>
+    <string name="cardName">x</string>
+    <string name="recommendations">x</string>
+    <string name="text">x</string>
+    <string name="titleReco">x</string>
 </resources>

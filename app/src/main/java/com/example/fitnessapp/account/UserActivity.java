@@ -13,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.fitnessapp.R;
 import com.example.fitnessapp.calendar.CalendarActivity;
 import com.example.fitnessapp.tracking.TrackingActivity;
+import com.example.fitnessapp.recommendations.ListRecosActivity;
 
 public class UserActivity extends AppCompatActivity {
 
@@ -47,6 +48,10 @@ public class UserActivity extends AppCompatActivity {
         System.out.println("Brwose click");
 
         Intent intent = new Intent(UserActivity.this, TrackingActivity.class);
+    }
+
+    public void onRecoClick(View view) {
+        Intent intent = new Intent(UserActivity.this, ListRecosActivity.class);
         startActivity(intent);
     }
 

@@ -55,6 +55,9 @@
         <activity android:name=".calendar.CalendarActivity" />
         <activity android:name=".calendar.EventEditActivity" />
         <activity android:name=".calendar.WeekViewActivity" />
+        <activity android:name=".recommendations.ListRecosActivity" />
+        <activity android:name=".recommendations.Horizontal_ScrollView" />
+
         <activity
             android:name=".account.LoginActivity"
             android:exported="true">

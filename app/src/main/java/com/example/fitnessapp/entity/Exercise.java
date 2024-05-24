@@ -8,6 +8,22 @@ public class Exercise implements Serializable {
     String distance;
     String energyExpended;
     String date;
+    private String name;
+    private int priority;
+    private String instruction;
+    private String type = "exercise";
+
+    public Exercise(String instruction, String name, int priority, String type) {
+        this.instruction = instruction;
+        this.name = name;
+        this.priority = priority;
+        this.type = type;
+    }
+
+    public String getName() {return name;}
+    public int getPriority() {return priority;}
+    public String getInstruction() {return instruction;}
+    public String getType() {return type;}
 
     @Override
     public String toString() {
@@ -29,9 +45,10 @@ public class Exercise implements Serializable {
     }
 
 
-    public  Exercise(){
+    public Exercise() {
 
     }
+
     public Exercise(String activityType, String duration, String distance, String energyExpended, String date) {
         this.activityType = activityType;
         this.duration = duration;
@@ -71,7 +88,6 @@ public class Exercise implements Serializable {
     public void setEnergyExpended(String energyExpended) {
         this.energyExpended = energyExpended;
     }
-
 
 
 }

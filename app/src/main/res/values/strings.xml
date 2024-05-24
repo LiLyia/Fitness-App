@@ -102,5 +102,10 @@
     <string name="add_exercise">Add Exercise</string>
     <string name="add_hydration">Add Hydration</string>
     <string name="viewDetails">View Details</string>
+    <string name="cardName">Card name</string>
+    <string name="recommendations">Recommendations</string>
+    <string name="text">Test</string>
+    <string name="titleReco">Title</string>
+
 
 </resources>
